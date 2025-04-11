@@ -10,7 +10,7 @@ Um esquema de banco de dados para sistema de e-commerce com gestão de clientes 
 - Rastreamento de entregas
 
 ## 🗄️ Diagrama do Banco de Dados
-
+![image](https://github.com/user-attachments/assets/b541e314-4166-40e5-a5b3-52865efccd0a)
 
 ## 🛠️ Tecnologias
 - MySQL 8.0+
@@ -20,9 +20,3 @@ Um esquema de banco de dados para sistema de e-commerce com gestão de clientes 
 
 ### Pré-requisitos
 - Sistema de gerenciamento de banco de dados (MySQL, PostgreSQL, etc.)
-- Git (para clonar o repositório)
-
-### Instalação
-```bash
-git clone https://github.com/seu-usuario/ecommerce-db.git
-cd ecommerce-db
