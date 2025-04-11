@@ -1,3 +1,41 @@
+
+# Projeto Conceitual de Banco de Dados - Oficina Mecânica
+
+Este repositório contém o esquema conceitual de banco de dados para um sistema de gerenciamento de ordens de serviço (OS) em uma oficina mecânica. O projeto foi desenvolvido com base na seguinte narrativa:
+
+## Narrativa
+- Clientes levam veículos à oficina para consertos ou revisões periódicas.
+- Cada veículo é designado a uma equipe de mecânicos, que identifica os serviços a serem executados e preenche uma OS com data de entrega.
+- O valor de cada serviço é calculado com base em uma tabela de referência de mão-de-obra.
+- O valor das peças também compõe o valor total da OS.
+- A mesma equipe avalia e executa os serviços.
+- Mecânicos possuem código, nome, endereço e especialidade.
+- Cada OS possui número, data de emissão, valor, status e data para conclusão.
+
+## Esquema do Banco de Dados
+
+O banco de dados é composto pelas seguintes tabelas:
+
+- **Cliente**: Armazena informações dos clientes.
+- **Veículo**: Armazena informações dos veículos dos clientes.
+- **Mecânico**: Armazena informações dos mecânicos.
+- **Equipe**: Armazena informações das equipes de mecânicos.
+- **Equipe_Mecanico**: Relaciona mecânicos às equipes.
+- **Ordem_Servico**: Registra as ordens de serviço.
+- **Servico**: Armazena os serviços disponíveis.
+- **Peca**: Armazena as peças disponíveis.
+- **OS_Servico**: Relaciona serviços às ordens de serviço.
+- **OS_Peca**: Relaciona peças às ordens de serviço.
+
+## Como Utilizar
+
+1. Clone este repositório.
+2. Execute o script SQL em um sistema de gerenciamento de banco de dados (ex: MySQL, PostgreSQL).
+
+## Observações
+- Decisões não especificadas na narrativa, como a quantidade de mecânicos por equipe e a forma de cálculo do valor total da OS, foram definidas com base no contexto de uma oficina mecânica.
+
+
 -- Tabela de Clientes
 CREATE TABLE Cliente (
     id_cliente INT PRIMARY KEY AUTO_INCREMENT,
@@ -86,43 +124,3 @@ CREATE TABLE OS_Peca (
     FOREIGN KEY (id_os) REFERENCES Ordem_Servico(id_os),
     FOREIGN KEY (id_peca) REFERENCES Peca(id_peca)
 );
-
-# Projeto Conceitual de Banco de Dados - Oficina Mecânica
-
-Este repositório contém o esquema conceitual de banco de dados para um sistema de gerenciamento de ordens de serviço (OS) em uma oficina mecânica. O projeto foi desenvolvido com base na seguinte narrativa:
-
-## Narrativa
-- Clientes levam veículos à oficina para consertos ou revisões periódicas.
-- Cada veículo é designado a uma equipe de mecânicos, que identifica os serviços a serem executados e preenche uma OS com data de entrega.
-- O valor de cada serviço é calculado com base em uma tabela de referência de mão-de-obra.
-- O valor das peças também compõe o valor total da OS.
-- A mesma equipe avalia e executa os serviços.
-- Mecânicos possuem código, nome, endereço e especialidade.
-- Cada OS possui número, data de emissão, valor, status e data para conclusão.
-
-## Esquema do Banco de Dados
-
-O banco de dados é composto pelas seguintes tabelas:
-
-- **Cliente**: Armazena informações dos clientes.
-- **Veículo**: Armazena informações dos veículos dos clientes.
-- **Mecânico**: Armazena informações dos mecânicos.
-- **Equipe**: Armazena informações das equipes de mecânicos.
-- **Equipe_Mecanico**: Relaciona mecânicos às equipes.
-- **Ordem_Servico**: Registra as ordens de serviço.
-- **Servico**: Armazena os serviços disponíveis.
-- **Peca**: Armazena as peças disponíveis.
-- **OS_Servico**: Relaciona serviços às ordens de serviço.
-- **OS_Peca**: Relaciona peças às ordens de serviço.
-
-## Como Utilizar
-
-1. Clone este repositório.
-2. Execute o script SQL em um sistema de gerenciamento de banco de dados (ex: MySQL, PostgreSQL).
-3. Adapte o esquema conforme necessário para o seu projeto.
-
-## Observações
-- Decisões não especificadas na narrativa, como a quantidade de mecânicos por equipe e a forma de cálculo do valor total da OS, foram definidas com base no contexto de uma oficina mecânica.
-
-## Contribuições
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
